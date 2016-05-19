@@ -1,0 +1,20 @@
+<div class="info" *ngIf="recipe == null">
+	<h1>Please choose or create a recipe!</h1>
+</div>
+<div class="recipe" *ngIf="recipe != null">
+	<h1>{{recipe.name}}</h1><br />
+	<span><a (click)="onEdit()">Edit</a> | <a (click)="onDelete()" class="danger">Delete</a></span>
+	<div class="img">
+		<img [src]="recipe.imageUrl">
+		<ul>
+			<li style="font-size: 1.3em;">Ingredients</li>
+			<li *ngFor="#item of recipe.ingredients">{{ item.name }} ({{ item.amount }})</li>
+			<li><a (click)="onAddToShoppingList()" class="btn">Add all to shopping list</a></li>
+		</ul>
+	</div>
+	<div class="content">
+		<p style="font-size: 1.3em; text-align: center;">Directions</p>
+		{{ recipe.content }}
+	</div>
+	
+</div>
