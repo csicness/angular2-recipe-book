@@ -7,7 +7,6 @@ import { RecipeService } from './recipe.service';
 @Component({
 	selector: 'my-recipe-list',
 	template: `
-		<button class="btn" (click)="onAddRecipe()">Add Recipe</button>
 		<ul>
 			<li *ngFor="#item of recipes" (click)="onSelect(item)">
 				<div class="img">
@@ -16,6 +15,8 @@ import { RecipeService } from './recipe.service';
 				<div class="text">{{ item.name }}</div>
 			</li>
 		</ul>
+		<button class="btn" (click)="onAddRecipe()">Add Recipe</button>
+		
 	`
 })
 
