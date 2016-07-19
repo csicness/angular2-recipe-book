@@ -1,9 +1,8 @@
-# Angular 2 Beta Boilerplate
-https://github.com/mschwarzmueller/angular-2-beta-boilerplate.git
+# Angular 2 Recipe Book
 
 ## Description
-This repository acts as a very simple Angular 2 Beta Boilerplate with which you can get started developing Angular 2 immediately.
-It is derived from the official Angular 2 Documentation which can be found [here](https://angular.io/docs/ts/latest/quickstart.html).
+Recipe Book app using angular 2.
+
 ## Usage
 Follow the following steps and you're good to go! Important: Typescript and npm has to be installed on your machine!
 
