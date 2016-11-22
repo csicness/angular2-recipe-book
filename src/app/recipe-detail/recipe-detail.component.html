@@ -1,0 +1,28 @@
+<div *ngIf="recipe" class="recipe">
+
+  <h3>{{recipe.name}}<small>A recipe from the heavens.</small><button class="btn" (click)="goBack()" >Back to recipes</button></h3>
+  <div class="recipe-flex">
+
+    <div class="description">
+
+      <img src="{{recipe.imageUrl}}" alt="Picture of sphagetti">
+
+      <h4>Ingredients:</h4>
+      
+      <ul *ngFor="let ingredient of recipe.ingredients">
+        <li>{{ingredient.name}} <span>{{ingredient.amount + ingredient.size}}</span></li>
+      </ul>
+
+      <button (click)="addAll(recipe.ingredients)" class="btn">Add Ingredients to Shopping List</button>
+
+      <p>{{recipe.description}}</p>
+
+    </div>
+
+    <div class="plan">
+      <p>{{recipe.directions}}</p>
+    </div>
+
+  </div>
+
+</div>

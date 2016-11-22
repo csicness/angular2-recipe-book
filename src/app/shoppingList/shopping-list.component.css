@@ -1,0 +1,234 @@
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+table {
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+table th {
+    display: none;
+}
+
+table tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+table td {
+    display: block;
+}
+
+table td:first-child {
+    padding-top: .5em;
+}
+
+table td:last-child {
+    padding-bottom: .5em
+}
+
+table td:before {
+    content: attr(data-th)": ";
+    font-weight: bold;
+    width: 6.5em;
+    display: inline-block;
+}
+
+@media(min-width: 480px) {
+    table {
+        font-size: 1.2em;
+    }
+
+    table td:before {
+        display: none;
+    }
+
+    table td {
+        text-align: left;
+        text-transform: capitalize;
+        padding: .25em .5em;
+        display: table-cell;
+        border-bottom: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table tr:hover {
+        background-color: #87A7C7;
+    }
+
+    table tr:not(:last-child) {
+        border-bottom: 1px solid black;
+    }
+
+    table th {
+        text-align: left;
+        padding: .25em .5em;
+        display: table-cell;
+    }
+}
+
+/* form starting stylings ------------------------------- */
+.form-container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+form {
+    display: inline-block;
+}
+
+.group { 
+  position: relative; 
+  margin-bottom: 35px; 
+}
+
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus { outline:none; }
+
+/* SELECT ====================================== */
+.selection {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #999;
+    background-color: white;
+    width: 300px;
+}
+
+.selection select {
+    width: 100%;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999; 
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all; 
+  -moz-transition: 0.2s ease all; 
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label {
+  top: -20px;
+  color: black;
+}
+
+/* BOTTOM BARS ================================= */
+.bar { 
+    position:relative; 
+    display:block; 
+    width:300px; 
+}
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px; 
+  width: 0;
+  bottom: 1px; 
+  position: absolute;
+  background: #5264AE; 
+  transition: 0.2s ease all; 
+  -moz-transition: 0.2s ease all; 
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%; 
+  width: 100px; 
+  top: 25%; 
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { 
+        background: #5264AE; 
+    } to { 
+        width: 0; 
+        background: transparent; 
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+	from { 
+        background:#5264AE; 
+    } to { 
+        width:0; 
+        background:transparent; 
+    }
+}
+@keyframes inputHighlighter {
+	from { 
+        background:#5264AE; 
+    } to { 
+        width:0; 
+        background:transparent; 
+    }
+}
+
+/* Button */
+button {
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius: 40px;
+  background: #fff;
+  border: 2px solid #5264AE;
+  color: #5264AE;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+button:hover {
+  color: white;
+  background: #5264AE;
+}
+button:active {
+  letter-spacing: 8px;
+}

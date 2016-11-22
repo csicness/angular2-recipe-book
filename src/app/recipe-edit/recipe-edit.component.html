@@ -1,0 +1,92 @@
+<div class="form-container">
+    <h2>{{ selectedRecipe ? "Update Recipe" : "Add a New Recipe" }}</h2>
+    <form action="" (ngSubmit)="onUpdate(recipeForm.value)" #recipeForm="ngForm" *ngIf="selectedRecipe">
+        <div class="group">
+            <input type="text" placeholder="Recipe Name" name="name" [(ngModel)]="selectedRecipe.name" #name="ngModel" />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="group">
+            <input type="text" placeholder="imageUrl" name="imageUrl" [(ngModel)]="selectedRecipe.imageUrl" #imageUrl="ngModel" />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="group">
+            <textarea name="" id="" cols="10" rows="4" placeholder="Description" name="description" [(ngModel)]="selectedRecipe.description" #description="ngModel"></textarea>
+        </div>
+        <div class="group">
+            <textarea name="" id="" cols="10" rows="15" placeholder="Directions" name="directions" [(ngModel)]="selectedRecipe.directions" #directions="ngModel"></textarea>
+        </div>
+        <div class="group">
+            <form #fi>
+                <h3>Ingredients</h3>
+                <div class="group">
+                    <input type="text" placeholder="Ingredient" #name />
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="group">
+                    <input type="number" placeholder="Amount" #amount/>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="group">
+                    <input type="text" placeholder="Measurement" #size/>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                </div>
+                <button (click)="saveIngredients(name.value, amount.value, size.value, fi)">Add</button>
+            </form>
+            <ul *ngFor="let ingredient of ingredients">
+                <li (click)="deleteIngredient(ingredient)">{{ingredient.name}} {{ingredient.amount + ingredient.size}}</li>
+            </ul>
+        </div>
+        <button>Save</button>
+        <button routerLink="/recipes">Cancel</button>
+    </form>
+
+    <form action="" (ngSubmit)="onSubmit(recipeForm.value)" [formGroup]="recipeForm" *ngIf="!selectedRecipe">
+        <div class="group">
+            <input type="text" placeholder="Recipe Name" [formControl]="recipeForm.controls['name']" />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="group">
+            <input type="text" placeholder="imageUrl" [formControl]="recipeForm.controls['imageUrl']" />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="group">
+            <textarea name="" id="" cols="10" rows="4" placeholder="Description" [formControl]="recipeForm.controls['description']"></textarea>
+        </div>
+        <div class="group">
+            <textarea name="" id="" cols="10" rows="15" placeholder="Directions" [formControl]="recipeForm.controls['directions']"></textarea>
+        </div>
+        <div class="group">
+            <form #fi>
+                <h3>Ingredients</h3>
+                <div class="group">
+                    <input type="text" placeholder="Ingredient" #name />
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="group">
+                    <input type="number" placeholder="Amount" #amount/>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="group">
+                    <input type="text" placeholder="Measurement" #size/>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                </div>
+                <button (click)="saveIngredients(name.value, amount.value, size.value, fi)">Add</button>
+            </form>
+            <ul *ngFor="let ingredient of ingredients">
+                <li (click)="deleteIngredient(ingredient)">{{ingredient.name}} {{ingredient.amount + ingredient.size}}</li>
+            </ul>
+        </div>
+        <button>Save</button>
+        <button routerLink="/recipes">Cancel</button>
+    </form>
+</div>

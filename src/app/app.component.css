@@ -1,0 +1,73 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css);
+
+.menu {
+  position: fixed;
+  height: auto;
+  width: 65px;
+  background: #2c3e50;
+  color:#fff;
+  transition:width 1s;
+  overflow: hidden;
+  font-family: 'Michroma', sans-serif;
+  z-index: 99;
+}
+
+.menu:hover {
+  width: 220px;
+}
+
+.menuItem a {
+  position: absolute;
+  left:80px;
+  top:20px;
+  transition:color 1s;
+  color:rgba(255,255,255,0);
+  text-decoration: none;
+}
+
+.menu:hover .menuItem  a {
+ color:rgba(255,255,255,1);
+}
+
+.menuItem {
+  position: relative;
+  padding: 20px;
+  transition:border .5s, background .2s;  
+}
+
+.menuItem:hover {
+  background: #34495e;
+  cursor: pointer;
+}
+
+.list {
+ border-left:5px solid #2980b9; border-bottom:2px solid #2980b9;
+}
+
+.list:hover {
+ border-left:20px solid #2980b9;
+}
+
+.recipes {
+  border-left:5px solid #29b992; border-bottom:2px solid #29b992;
+}
+
+.recipes:hover {
+  border-left:20px solid #29b992;
+}
+
+.addRecipe {
+  border-left:5px solid #25b63a; border-bottom:2px solid #25b63a;
+}
+
+.addRecipe:hover {
+  border-left:20px solid #25b63a;
+}
+
+.search {
+ border-left:5px solid #8BC34A;border-bottom:2px solid #8BC34A;
+}
+
+.search:hover {
+ border-left:20px solid #8BC34A;
+}

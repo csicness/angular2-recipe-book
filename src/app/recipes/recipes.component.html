@@ -1,0 +1,17 @@
+<h1>Recipes</h1>
+<section id="recipes">
+  <div id="recipe-container">
+    <div class="recipe-item" *ngFor="let recipe of recipes">
+      <div (click)="recipeDetail(recipe)">
+        <img src={{recipe.imageUrl}} />
+        <h3>{{recipe.name}}</h3>
+      </div>
+      <div class="btnContainer">
+        <button class="btn" (click)="recipeEdit(recipe)">Edit</button>
+        <button class="btn" (click)="delete(recipe)">Delete</button>
+      </div>
+  </div>
+    </div>
+
+
+</section>
